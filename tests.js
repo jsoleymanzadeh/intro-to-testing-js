@@ -57,33 +57,64 @@ describe('isEven', function () {
     it('should be a defined function', function () {
         expect(typeof isEven).toBe("function");
     });
-    it('should return a boolean when called', function() {
+    it('should return a boolean when called', function () {
         expect(typeof isEven()).toBe("boolean");
     });
-    it('isEven(2) should return true when executed', function() {
+    it('isEven(2) should return true when executed', function () {
         expect(isEven(2)).toBe(true);
     });
-    it('isEven(-4) should return true when executed', function() {
+    it('isEven(-4) should return true when executed', function () {
         expect(isEven(-4)).toBe(true);
     });
-    it('isEven(3) should return false when executed', function() {
+    it('isEven(3) should return false when executed', function () {
         expect(isEven(3)).toBe(false);
     });
-    it('isEven("banana") should return false when executed', function() {
+    it('isEven("banana") should return false when executed', function () {
         expect(isEven("banana")).toBe(false);
     });
-    it('isEven("8") should return true when executed', function() {
+    it('isEven("8") should return true when executed', function () {
         expect(isEven("8")).toBe(true);
     });
-    it('isEven(Infinity) should return false when executed', function() {
+    it('isEven(Infinity) should return false when executed', function () {
         expect(isEven(Infinity)).toBe(false);
     });
-    it('isEven(true) and isEven(false) should return false when executed', function() {
+    it('isEven(true) and isEven(false) should return false when executed', function () {
         expect(isEven(true)).toBe(false);
-    } && function() {
+    } && function () {
         expect(isEven(false)).toBe(false);
     });
-    it('isEven() should return false when executed', function() {
+    it('isEven() should return false when executed', function () {
         expect(isEven()).toBe(false);
+    });
+})
+describe('isVowel', function () {
+    it('should be a defined function', function () {
+        expect(typeof isVowel).toBe("function");
+    });
+    it('should return a boolean when called', function () {
+        expect(typeof isVowel()).toBe("boolean");
+    });
+    it('isVowel("a") should return true when executed', function () {
+        expect(isVowel("a")).toBe(true);
+    });
+    it('isVowel("A") should return true when executed', function () {
+        expect(isVowel("A")).toBe(true);
+    });
+    it('isVowel("y") should return false when executed', function () {
+        expect(isVowel("y")).toBe(false);
+    });
+    it('isVowel(4) should return false when executed', function () {
+        expect(isVowel(4)).toBe(false);
+    });
+    it('isVowel(true) or isVowel(false) should both return false when executed', function () {
+        expect(isVowel(true)).toBe(false);
+    } && function () {
+        expect(isVowel(false)).toBe(false);
+    });
+    it('isVowel("banana") should return false when executed', function () {
+        expect(isVowel("banana")).toBe(false);
+    });
+    it('isVowel() should return false when executed', function () {
+        expect(isVowel()).toBe(false);
     });
 })

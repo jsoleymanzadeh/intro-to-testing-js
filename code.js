@@ -14,10 +14,19 @@ function sayHello(input) {
 function isFive(input) {
     return input == 5;
 }
+
 function isEven(input) {
-    if(input == 0) {
+    if (input == 0) {
         return false;
     } else {
         return input % 2 == 0;
+    }
+}
+
+function isVowel(input) {
+    if (typeof input === "string") {
+        return input.toLowerCase() === "a" || input.toLowerCase() === "e" || input.toLowerCase() === "i" || input.toLowerCase() === "o" || input.toLowerCase() === "u";
+    } else {
+        return false;
     }
 }
