@@ -30,3 +30,11 @@ function isVowel(input) {
         return false;
     }
 }
+
+function add(input1, input2) {
+    if (isNaN(input1) || isNaN(input2)) {
+        return "NaN";
+    } else {
+        return Number(input1) + Number(input2);
+    }
+}
