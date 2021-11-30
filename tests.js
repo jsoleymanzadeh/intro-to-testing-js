@@ -15,7 +15,7 @@ describe('helloWorld', function () {
 });
 describe('sayHello', function () {
     it('should be a defined function', function () {
-        expect(typeof sayHello).toBe('function');
+        expect(sayHello).toBeDefined();
     });
     it('should return a string when called', function () {
         expect(typeof sayHello()).toBe("string");
@@ -41,7 +41,7 @@ describe('sayHello', function () {
 });
 describe('isFive', function () {
     it('should be a defined function', function () {
-        expect(typeof isFive).toBe("function");
+        expect(isFive).toBeDefined();
     });
     it('should return a boolean when called', function () {
         expect(typeof isFive()).toBe("boolean");
@@ -55,7 +55,7 @@ describe('isFive', function () {
 });
 describe('isEven', function () {
     it('should be a defined function', function () {
-        expect(typeof isEven).toBe("function");
+        expect(isEven).toBeDefined();
     });
     it('should return a boolean when called', function () {
         expect(typeof isEven()).toBe("boolean");
@@ -89,7 +89,7 @@ describe('isEven', function () {
 });
 describe('isVowel', function () {
     it('should be a defined function', function () {
-        expect(typeof isVowel).toBe("function");
+        expect(isVowel).toBeDefined();
     });
     it('should return a boolean when called', function () {
         expect(typeof isVowel()).toBe("boolean");
@@ -120,7 +120,7 @@ describe('isVowel', function () {
 });
 describe('add', function () {
     it('should be a defined function', function () {
-        expect(typeof add).toBe("function");
+        expect(add).toBeDefined();
     });
     it('add(2, 3) should return 5 when executed', function () {
         expect(add(2, 3)).toBe(5);
@@ -134,13 +134,34 @@ describe('add', function () {
     it('add("-4", "10") should return 6 when executed', function () {
         expect(add("-4", "10")).toBe(6);
     });
+    // -----test with toBeNaN()-----
     it('add("banana", "split") should return NaN when executed', function () {
-        expect(add("banana", "split")).toBe("NaN");
+        expect(add("banana", "split")).toBeNaN();
     });
     it('add(2, "apples") should return NaN when executed', function () {
-        expect(add(2, "apples")).toBe("NaN");
+        expect(add(2, "apples")).toBeNaN();
     });
     it('add() should return NaN when executed', function () {
-        expect(add()).toBe("NaN");
+        expect(add()).toBeNaN();
     });
+    // -----test with "NaN" string-----
+    // it('add("banana", "split") should return NaN when executed', function () {
+    //     expect(add("banana", "split")).toBe("NaN");
+    // });
+    // it('add(2, "apples") should return NaN when executed', function () {
+    //     expect(add(2, "apples")).toBe("NaN");
+    // });
+    // it('add() should return NaN when executed', function () {
+    //     expect(add()).toBe("NaN");
+    // });
+    // -----test with isNaN()-----
+    // it('add("banana", "split") should return NaN when executed', function () {
+    //     expect(isNaN(add("banana", "split"))).toBe(true);
+    // });
+    // it('add(2, "apples") should return NaN when executed', function () {
+    //     expect(isNaN(add(2, "apples"))).toBe(true);
+    // });
+    // it('add() should return NaN when executed', function () {
+    //     expect(isNaN(add())).toBe(true);
+    // });
 });

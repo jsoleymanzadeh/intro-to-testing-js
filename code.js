@@ -16,7 +16,7 @@ function isFive(input) {
 }
 
 function isEven(input) {
-    if (input == 0) {
+    if (!!input == false) {
         return false;
     } else {
         return input % 2 == 0;
@@ -25,16 +25,20 @@ function isEven(input) {
 
 function isVowel(input) {
     if (typeof input === "string") {
-        return input.toLowerCase() === "a" || input.toLowerCase() === "e" || input.toLowerCase() === "i" || input.toLowerCase() === "o" || input.toLowerCase() === "u";
+        input = input.toLowerCase();
+        return input === "a" || input === "e" || input === "i" || input === "o" || input === "u";
     } else {
         return false;
     }
 }
 
+// function add(input1, input2) {
+//     if (isNaN(input1) || isNaN(input2)) {
+//         return "NaN";
+//     } else {
+//         return Number(input1) + Number(input2);
+//     }
+// }
 function add(input1, input2) {
-    if (isNaN(input1) || isNaN(input2)) {
-        return "NaN";
-    } else {
-        return Number(input1) + Number(input2);
-    }
+    return Number(input1) + Number(input2);
 }
